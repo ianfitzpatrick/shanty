@@ -1,0 +1,220 @@
+// Get bootstrap variables
+@import "../bootstrap/less/variables.less";
+
+// Load Font Awesome
+@import "../font-awesome/less/font-awesome.less"; // Has to be last to override when necessary
+
+// Tweak colors and such here
+@import "custom-vars.less";
+
+/* Please refer to assets/less/style.less for commented code */
+
+/* Icon Colors (You may actaully need to edit these) */
+// --------------------
+.icon-lemon {
+    color: @green;
+}
+
+.icon-camera {
+    color: @grayDark;
+}
+
+.icon-twitter-sign {
+    color: @blue;
+}
+
+.icon-comment {
+    color: @orange;
+}
+
+.icon-envelope {
+    color: @grayLight;
+}
+
+// Top Level Settings
+// --------------------
+
+body {
+     /* Backgrounds by Subtle Patterns */
+     /* Subtle Patterns by Subtle Patterns is licensed under a 
+        Creative Commons Attribution-ShareAlike 3.0 Unported License 
+        http://subtlepatterns.com/
+     */
+     background-image:url('@{bgImagePath}/@{bgImage}');
+}
+
+div.container-fluid {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 960px !important;
+}
+
+footer {
+    margin-top: 20px;
+    text-align: center;
+}
+
+// Masthead
+// --------------------
+
+.masthead {
+    text-align: center;
+
+  h1 {
+      font-size: 90px;
+      margin-bottom: 20px;
+      line-height: 70px;
+  }
+
+  p {
+      font-size: 38px;
+      color: @grayLight;
+      line-height: 40px;
+      margin-bottom: 60px;
+  }
+
+}
+
+.sites div {
+
+  // Grid Row Tweaks
+  // --------------------
+      width: 100%;
+      text-align: center;
+
+  // Icon Size & Dropshadow
+  // -------------------------
+    i {
+        font-size: 120px;
+        text-shadow: 2px 2px 3px @grayLight;    
+    }
+
+  // Icon Title
+  // --------------------
+   h3 {
+      padding-top: 40px;
+    
+      a:hover {
+        text-decoration: underline;
+        }
+    }
+
+  // Link Formatting
+  // --------------------
+    a {
+        text-decoration: none;
+        color: @grayDark;
+    }
+
+  // Icon Detail Text
+  // --------------------
+    p {
+        margin-bottom: 60px;
+    }
+
+}
+
+// Responsive Design Tweaks
+// --------------------
+
+// Landscape phone to portrait tablet 
+// Maintain same layout, but shrink everything.
+@media (max-width: 767px) {
+  
+  // Reduce masthead header font size
+  .masthead {
+      
+      h1 {
+        font-size: 50px;
+        margin-bottom: 0px;
+      }
+
+    // Reduce masthead detail font size
+      p {
+        font-size: 20px !important;
+      }
+  
+  }
+
+  .sites div {
+
+    // Reduce icon size
+    i {
+      font-size: 80px;
+    }
+
+    // Reduce icon title size/fix margins
+    h3 {
+      font-size: 16px;
+      padding-top: 30px;
+      margin-bottom: 4px;
+      line-height: 18px;
+    }
+
+    // Reduce icon detail text size
+    p {
+      font-size: 12px;
+      margin-bottom: 40px;
+    }
+  
+  }
+
+}
+
+// Landscape phones and down
+// Change layout from grid to list
+@media (max-width: 480px) {
+  
+  // Reduce masthead font size
+  .masthead h1 {
+    font-size: 50px !important;
+  }
+  
+  // Set fixed that fits phones
+  .sites {
+    width: 380px;
+  }
+  
+  // Correct width of rows
+  .sites div {
+    float: left !important;
+    width: 100% !important;
+    text-align: left;
+    margin-bottom: 40px;
+  
+    // Set all icons to a list layout
+    > a {
+      display: block;
+      float: left !important;
+    }
+    
+    // Set fixed with of icons
+    i {
+      width: 140px;
+      height: 100px;
+      font-size: 100px;
+    }
+    
+
+    // Set all icon titles to a list layout  
+    h3 {
+      float: left !important;
+      clear: none !important;
+      width: 60%;
+      font-size: 20px;
+      line-height: 24px;
+      padding: 0px !important;
+      margin: 0px 0 0px 0px;
+    }
+    
+    // Set all icon detail text to a list layout 
+    p {
+      float: left;
+      width: 45%;
+      font-size: 14px;
+      margin-top: 0px;
+      margin-bottom: 20px;
+    }
+
+  }  
+}
